@@ -91,7 +91,7 @@ static int dummycon_font_copy(struct vc_data *vc, int a)
     return 0;
 }
 
-static void con_bmove(struct vc_data *vc, int a, int b, int c, int d, int e, intf)
+static void con_bmove(struct vc_data *vc, int a, int b, int c, int d, int e, int f)
 {
 }
 
@@ -115,9 +115,9 @@ const struct consw dummy_con = {
     .owner =		THIS_MODULE,
     .con_startup =	dummycon_startup,
     .con_init =		dummycon_init,
-    .con_bmove =	DUMMY,
-    .con_set_palette =	DUMMY,
-    .con_scrolldelta =	DUMMY,
+    .con_bmove =	DUMMY_ROWS,
+    .con_set_palette =	DUMMY_ROWS,
+    .con_scrolldelta =	DUMMY_ROWS,
     .con_deinit =	dummycon_deinit,
     .con_clear =	dummycon_clear,
     .con_putc =		dummycon_putc,
